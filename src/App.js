@@ -12,7 +12,7 @@ function App() {
   // Load products from backend
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:5000/api/products") // Replace with Render URL when deployed
+      .get("https://sustainability-score-calculator-backend.onrender.com/")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -20,7 +20,7 @@ function App() {
   // Delete product
   const handleDelete = (id) => {
     axios
-      .delete(`http://127.0.0.1:5000/api/products/${id}`) // Replace with Render URL
+      .delete(`https://sustainability-score-calculator-backend.onrender.com/${id}`)
       .then(() => setProducts((prev) => prev.filter((p) => p.id !== id)))
       .catch((err) => console.error(err));
   };

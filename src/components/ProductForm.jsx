@@ -22,7 +22,7 @@ const ProductForm = ({ onNewProduct }) => {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/api/products",
+        "https://sustainability-score-calculator-backend.onrender.com/",
         formData
       );
       if (onNewProduct) onNewProduct(response.data);
