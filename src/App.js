@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     axios
       .get("https://sustainability-score-calculator-backend.onrender.com/api/products")
-      .then((res) => setProducts(res.data))
+      .then((res) => setProducts(Array.isArray(res.data) ? res.data : []))
       .catch((err) => console.error(err));
   }, []);
 
