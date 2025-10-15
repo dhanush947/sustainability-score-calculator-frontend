@@ -12,7 +12,7 @@ function App() {
   // Load products from backend
   useEffect(() => {
     axios
-      .get("https://sustainability-score-calculator-backend.onrender.com/")
+      .get("https://sustainability-score-calculator-backend.onrender.com/api/products")
       .then((res) => setProducts(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -20,7 +20,7 @@ function App() {
   // Delete product
   const handleDelete = (id) => {
     axios
-      .delete(`https://sustainability-score-calculator-backend.onrender.com/${id}`)
+      .delete(`https://sustainability-score-calculator-backend.onrender.com/api/products${id}`)
       .then(() => setProducts((prev) => prev.filter((p) => p.id !== id)))
       .catch((err) => console.error(err));
   };
